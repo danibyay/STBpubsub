@@ -1,0 +1,25 @@
+{
+  "name": "pubsub",
+  "version": "0.0.0",
+  "description": "node.js soup to bits pub sub server dany",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danibyay/STBpubsub.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danibyay/STBpubsub/issues"
+  },
+  "homepage": "https://github.com/danibyay/STBpubsub#readme",
+  "dependencies": {
+    "axon": "^2.0.2",
+    "express": "^3.0.0",
+    "redis": "^2.4.2",
+    "underscore": "^1.8.3"
+  }
+}
