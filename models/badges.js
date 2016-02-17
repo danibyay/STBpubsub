@@ -15,6 +15,6 @@ exports.save = function(badges, callback){
   redis.lpush('badges', JSON.stringify(badge), function(err){
     if(err) return callback(err, null);
     //async recursion for multiple badges
-    exports.save(bades, callback);
+    exports.save(badges, callback);
   });
 };

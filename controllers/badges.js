@@ -14,4 +14,6 @@ exports.save = function(req, res, next){
 
 
 //send badges to put/sub socket in model
-exports.send = function(){};
+exports.send = function(req, res, next){
+  next();
+};
