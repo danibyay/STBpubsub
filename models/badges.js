@@ -2,7 +2,7 @@
 
 //require the database
 var redis = require('../lib/redis');
-
+var broadcast = require('..lib/broadcast');
 //save badges to database
 /*
  * @param {Array} badges
