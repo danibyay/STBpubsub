@@ -18,3 +18,23 @@ exports.save = function(badges, callback){
     exports.save(badges, callback);
   });
 };
+
+//Trim down the redis listen
+exports.trim = function(){
+  redis.ltrim('badges', 0, 9);
+};
+
+/* Send out badges to the broadcaster
+ * @param {Array} badges
+ * @param {Function} callback
+ */
+
+ exports.send = function(badges, callback){
+   badges.forEach(broadcast.send);
+   /* same as
+   * badges.forEach(function(badge){ broadcast.send(badge); });
+   */
+   callback(null, null);
+   //we're not calling the callback, but maybe in the future we'll
+   //want to, and for now the method is ready
+ };
