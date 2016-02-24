@@ -51,7 +51,6 @@ exports.trim = function(){
    redis.lrange('badges', 0, -1, function(err, data){
      //propagate the error back up to the controller
      if(err) { return callback(err, null); }
-     data = data.map(JSON.parse);
      callback(null, data.map(JSON.parse));
      //return the data to the controller
    }); //give me all of them
