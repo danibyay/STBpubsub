@@ -2,7 +2,8 @@
 
 //require the database
 var redis = require('../lib/redis');
-var broadcast = require('..lib/broadcast');
+var broadcast = require('../lib/broadcast');
+
 //save badges to database
 /*
  * @param {Array} badges
@@ -30,10 +31,12 @@ exports.trim = function(){
  */
 
  exports.send = function(badges, callback){
-   badges.forEach(broadcast.send);
-   /* same as
-   * badges.forEach(function(badge){ broadcast.send(badge); });
-   */
+   //badges.forEach(broadcast.send);
+
+   badges.forEach(function(badge){
+     broadcast.send(badge);
+   });
+
    callback(null, null);
    //we're not calling the callback, but maybe in the future we'll
    //want to, and for now the method is ready
